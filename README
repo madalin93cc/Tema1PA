@@ -1,0 +1,28 @@
+Colezea Madalin 325CC Tema 1 PA
+
+	Detalii implementare si complexitate
+	
+	*Tema a fost rezolvata in Java
+	*Unele detalii despre implementare sunt mentionate si in comentariile din cod
+	*In rezolvarea problemei 2 am folosit metode luate din laborator
+	*Problema 1 - Sauron:
+		- rezolvarea se bazeaza pe tehnica Greedy;
+		- am retinut intr-un HashMap in cheie indicele perechii si in valoare diferenta (stapan[i] - sclav[i]);
+		- am ordonat HashMap-ul descrescator dupa valoare;
+		- parcurgand HashMap-ul sortat algoritmul incearca sa gaseasca cei n/2 sclavi asigurandu-se la fiecare pas ca orice sclav este acoperit de un stapan cu indicele mai mare;
+		- acest lucru se realizeaza folosind un vector auxiliar construit astfel :
+			-v[i] = 1 ,dim perechea cu indicele i este ales sclavul;
+			-v[i] = 0 ,dim perechea cu indicele i este ales stapanul;
+		- pe baza vectorului final(cand s-au gasit toti sclavii) se construieste salariul;
+		- stapanii si sclavii astfel gasiti sunt pusi in alti vectori, acesti sunt ordonati crescator si pe baza lor se construiesc noile perechi;
+		- mai multe detalii sunt date in cod;
+		- complexitate : sortare - O (n), algoritmul de gasire al sclavilor poate ajunge in cazul cel mai defavorabil la O(n^2);
+	*Problema 2 - Matrix:
+		- rezolvarea se bazeaza pe tehnica programarii dinamice;
+		- metoda aleasa este asemanatoare cu cea pentru calcularea celui de-al N-lea termen din sirul lui Fibonacci prezentata in cadrul laboratorului;
+		- am generat o matrice de k+1 linii si coloane ce are 1 deasupra diagonalei principale si pe ultima linie si 0 in rest;
+		- am generat un vector de k+1 elemente puteri ale lui 2 de la 2^0 la 2^k;
+		- se ridica matricea la puterea n-k, se inmulteste cu vectorul generat si se obtine un alt vector, notat rez;
+		- rezultatul ridicarii ultimului element din rez la puterea m este chiar numarul de cadre;
+		- functiile auxiliare folosite pentru ridicarea la putere, inmultire matrici, inmultire matrice cu vector au complexitate logaritmica;
+		- algoritmul utilizat pentru determinarea numarului de cadre are complexitate O(log n);								
